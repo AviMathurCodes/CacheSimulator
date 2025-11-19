@@ -1,4 +1,5 @@
-R 0x3000
-W 0x3000 77
-R 0x3080
-R 0x3000
+R 0x3000      // read the first block from page 3
+W 0x3000 77   // write value 77 to 0x3000
+R 0x3080      // read a different offset in the same block
+R 0x3000      // read again to confirm write was visible
+// End of operations
