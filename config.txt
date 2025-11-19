@@ -1,6 +1,8 @@
-1024
-16
-2
-4096
-16
-4
+1024    // L1 size in bytes
+16      // L1 block size in bytes
+2       // L1 associativity (ways)
+
+// L2 configuration below
+4096    // L2 size in bytes
+16      // L2 block size in bytes
+4       // L2 associativity (ways)
