@@ -42,6 +42,7 @@ Revision History:
 
 Date          By                     Change Notes
 13 Nov 2025   Avi Mathur             Completed Cache class implementation
+19 Nov 2025   Avi Mathur             Changed configurations for config.tct and memops.txt to include comments. 
 */
 
 #pragma once
@@ -65,3 +66,12 @@ inline std::vector<std::string> split_whitespace(const std::string &s) {
 inline std::string to_hex(uint32_t x) {
     std::ostringstream ss; ss << "0x" << std::hex << std::uppercase << x; return ss.str();
 }
+
+// If '//' appears anywhere, everything from that point is considered a comment and is removed.
+inline std::string remove_cpp_comment(const std::string &s) {
+    size_t pos = s.find("//");
+    if (pos == std::string::npos) return s;
+    return s.substr(0, pos);
+}
+
+
